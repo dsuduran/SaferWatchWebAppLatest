@@ -1,0 +1,25 @@
+﻿@model SaferWatchWebApp.Models.CarrierLookup
+<h1>
+    Test
+</h1>
+
+<input type="text" id="docketNumber" name="docketNumber" />
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: 'Home/Index',
+            type: 'GET',
+            success: function (data) {
+
+                $('#docketNumber').val(data.CarrierDetails.docketNumber);
+
+            },
+            error: function (error) {
+                console.log('Error fetching data: ', error);
+            }
+        });
+    });
+</script>
