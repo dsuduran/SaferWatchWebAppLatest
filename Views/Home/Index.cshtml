@@ -1,6 +1,6 @@
 ﻿@model SaferWatchWebApp.Models.CarrierLookup
 <h1>
-    Test
+    Saferwatch Web APP
 </h1>
 
 <button id="fetchDataButton">Fetch Data</button>
@@ -31,6 +31,7 @@
             $.ajax({
                 url: 'Home/Index',
                 type: 'GET',
+                headers: {'Content-Type':'application/xml'}
                 success: function (response) {
                     $('#MCNumber').val(response.carrierDetails.docketNumber);
 

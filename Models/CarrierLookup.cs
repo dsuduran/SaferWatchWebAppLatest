@@ -16,10 +16,10 @@ namespace SaferWatchWebApp.Models
     public class CarrierLookup
     {
         [XmlElement("ResponseDO")]
-        public ResponseDO ResponseDO { get; set; }
+        public ResponseDO? ResponseDO { get; set; }
 
         [XmlElement("CarrierDetails")]
-        public CarrierDetails CarrierDetails { get; set; }
+        public CarrierDetails? CarrierDetails { get; set; }
 
     }
 

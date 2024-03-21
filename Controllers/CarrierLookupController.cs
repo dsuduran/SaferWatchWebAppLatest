@@ -388,7 +388,7 @@ using System.Xml.Serialization;
              </CarrierDetails>
           </CarrierLookup>";
 
-                // Step 1: Converting this XML to object (deserializing)
+                
                SaferWatchWebApp.Models.CarrierLookup deserializedObj = new SaferWatchWebApp.Models.CarrierLookup();
                 if (!string.IsNullOrWhiteSpace(data))
                 {
@@ -402,7 +402,7 @@ using System.Xml.Serialization;
                         catch (Exception e)
                         {
                             Console.WriteLine($"Deserialization error: {e.Message}");
-                            // Consider logging the full exception to a log file or external logging service for further investigation.
+                           
                             return StatusCode(500, "Internal server error during XML deserialization.");
                         }
                     }
@@ -412,7 +412,7 @@ using System.Xml.Serialization;
             }
             else
             {
-                // It might be helpful to log or return the actual HTTP status code and reason for failure.
+                
                 Console.WriteLine($"API call failed: {response.StatusCode}");
                 return StatusCode((int)response.StatusCode, response.ReasonPhrase);
             }
