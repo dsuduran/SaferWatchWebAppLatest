@@ -3,6 +3,9 @@
     Test
 </h1>
 
+<button id="fetchDataButton">Fetch Data</button>
+
+
 <input type="text" id="MCNumber" name="docketNumber" />
 <br />
 <input type="text" id="CargoInsuranceEffectiveDate" name="effectiveDate" />
@@ -22,26 +25,33 @@
 <input type="text" id="AutoLiabilityPolicyNumber" name="policyNumber" />
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-        $.ajax({
-            url: 'Home/Index',
-            type: 'GET',
-            success: function (data) {
+        $('#fetchDataButton').on('click', function () {
+            $.ajax({
+                url: 'Home/Index',
+                type: 'GET',
+                success: function (response) {
+                    $('#MCNumber').val(response.carrierDetails.docketNumber);
 
-                $('#docketNumber').val(data.CarrierDetails.docketNumber);
-                $('#effectiveDate').val(data.CarrierDetails.effectiveDate);
-                $('#expirationDate').val(data.CarrierDetails.expirationDate);
-                $('#companyName').val(data.CarrierDetails.companyName);
-                $('#policyNumber').val(data.CarrierDetails.policyNumber);
-                $('#effectiveDate').val(data.CarrierDetails.effectiveDate);
-                $('#policyNumber').val(data.CarrierDetails.policyNumber);
-
-            },
-            error: function (error) {
-                console.log('Error fetching data: ', error);
-            }
+                    response.carrierDetails.fmcsaInsurance.policyList.policyItems.forEach(function (policy) {
+                        if (policy.insuranceType === "BIPD") {
+                            $('#AutoLiabilityEffectiveDate').val(policy.effectiveDate);
+                            $('#AutoLiabilityExpirationDate').val(policy.cancelationDate);
+                            $('#AutoLiabilityInsuranceCompany').val(policy.companyName);
+                            $('#AutoLiabilityPolicyNumber').val(policy.policyNumber);
+                        }
+                        
+                        $('#CargoInsuranceEffectiveDate').val(response.carrierDetails.effectiveDate);
+                        $('#CargoInsuranceExpirationDate').val(response.carrierDetails.expirationDate);
+                        $('#CargoInsuraceCompany').val(response.carrierDetails.companyName);
+                        $('#CargoInsurancePolicyNumber').val(response.carrierDetails.policyNumber);
+                    });
+                },
+                error: function (error) {
+                    console.log('Error fetching data: ', error);
+                }
+            });
         });
     });
 </script>
