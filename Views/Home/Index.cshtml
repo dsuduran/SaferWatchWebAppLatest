@@ -3,7 +3,23 @@
     Test
 </h1>
 
-<input type="text" id="docketNumber" name="docketNumber" />
+<input type="text" id="MCNumber" name="docketNumber" />
+<br />
+<input type="text" id="CargoInsuranceEffectiveDate" name="effectiveDate" />
+<br/>
+<input type="text" id="CargoInsuranceExpirationDate" name="expirationDate" />
+<br />
+<input type="text" id="CargoInsuraceCompany" name="companyName" />
+<br />
+<input type="text" id="CargoInsurancePolicyNumber" name="policyNumber" />
+<br />
+<input type="text" id="AutoLiabilityEffectiveDate" name="effectiveDate" />
+<br />
+<input type="text" id="AutoLiabilityExpirationDate" name="expirationDate" /> 
+<br />
+<input type="text" id="AutoLiabilityInsuranceCompany" name="insurerName" />
+<br />
+<input type="text" id="AutoLiabilityPolicyNumber" name="policyNumber" />
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -15,6 +31,12 @@
             success: function (data) {
 
                 $('#docketNumber').val(data.CarrierDetails.docketNumber);
+                $('#effectiveDate').val(data.CarrierDetails.effectiveDate);
+                $('#expirationDate').val(data.CarrierDetails.expirationDate);
+                $('#companyName').val(data.CarrierDetails.companyName);
+                $('#policyNumber').val(data.CarrierDetails.policyNumber);
+                $('#effectiveDate').val(data.CarrierDetails.effectiveDate);
+                $('#policyNumber').val(data.CarrierDetails.policyNumber);
 
             },
             error: function (error) {

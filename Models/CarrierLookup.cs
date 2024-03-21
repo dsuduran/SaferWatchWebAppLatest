@@ -26,162 +26,162 @@ namespace SaferWatchWebApp.Models
     public class ResponseDO
     {
         [XmlElement("status")]
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
         [XmlElement("action")]
-        public string Action { get; set; }
+        public string? Action { get; set; }
 
         [XmlElement("code")]
-        public string Code { get; set; }
+        public string? Code { get; set; }
 
         [XmlElement("displayMsg")]
-        public string DisplayMsg { get; set; }
+        public string? DisplayMsg { get; set; }
 
         [XmlElement("techMsg")]
-        public string TechMsg { get; set; }
+        public string? TechMsg { get; set; }
     }
 
     public class CarrierDetails
     {
         [XmlElement("docketNumber")]
-        public string DocketNumber { get; set; }
+        public string? DocketNumber { get; set; }
 
         [XmlElement("dotNumber")]
-        public DotNumber DotNumber { get; set; }
+        public DotNumber? DotNumber { get; set; }
 
         [XmlElement("carrierType")]
-        public string CarrierType { get; set; }
+        public string? CarrierType { get; set; }
 
         [XmlElement("Identity")]
-        public Identity Identity { get; set; }
+        public Identity? Identity { get; set; }
 
         [XmlElement("Authority")]
-        public Authority Authority { get; set; }
+        public Authority? Authority { get; set; }
 
         [XmlElement("FMCSAInsurance")]
-        public FMCSAInsurance FMCSAInsurance { get; set; }
+        public FMCSAInsurance? FMCSAInsurance { get; set; }
 
         [XmlElement("CertData")]
-        public CertData CertData { get; set; }
+        public CertData? CertData { get; set; }
 
         [XmlElement("Safety")]
-        public Safety Safety { get; set; }
+        public Safety? Safety { get; set; }
 
         [XmlElement("Inspection")]
-        public Inspection Inspection { get; set; }
+        public Inspection? Inspection { get; set; }
 
         [XmlElement("Crash")]
-        public Crash Crash { get; set; }
+        public Crash? Crash { get; set; }
 
         [XmlElement("Review")]
-        public Review Review { get; set; }
+        public Review? Review { get; set; }
 
         [XmlElement("Operation")]
-        public Operation Operation { get; set; }
+        public Operation? Operation { get; set; }
 
         [XmlElement("Cargo")]
-        public Cargo Cargo { get; set; }
+        public Cargo? Cargo { get; set; }
 
         [XmlElement("Drivers")]
-        public Drivers Drivers { get; set; }
+        public Drivers? Drivers { get; set; }
 
         [XmlElement("Equipment")]
-        public Equipment Equipment { get; set; }
+        public Equipment? Equipment { get; set; }
 
         [XmlElement("Other")]
-        public Other Other { get; set; }
+        public Other? Other { get; set; }
 
         [XmlElement("RiskAssessment")]
-        public RiskAssessment RiskAssessment { get; set; }
+        public RiskAssessment? RiskAssessment { get; set; }
 
     }
 
     public class DotNumber
     {
         [XmlAttribute("status")]
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
         [XmlText]
-        public string Number { get; set; }
+        public string? Number { get; set; }
     }
 
     public class Identity
     {
 
         [XmlElement(ElementName = "legalName")]
-        public string legalName { get; set; }
+        public string? legalName { get; set; }
 
         [XmlElement(ElementName = "dbaName")]
-        public string dbaName { get; set; }
+        public string? dbaName { get; set; }
 
         [XmlElement(ElementName = "businessStreet")]
-        public string businessStreet { get; set; }
+        public string? businessStreet { get; set; }
 
         [XmlElement(ElementName = "businessCity")]
-        public string businessCity { get; set; }
+        public string? businessCity { get; set; }
 
         [XmlElement(ElementName = "businessState")]
-        public string BusinessState { get; set; }
+        public string? BusinessState { get; set; }
 
         [XmlElement(ElementName = "businessZipCode")]
         public string? businessZipCode { get; set; }
 
         [XmlElement(ElementName = "businessColonia")]
-        public string businessColonia { get; set; }
+        public string? businessColonia { get; set; }
 
         [XmlElement(ElementName = "businessCountry")]
-        public string businessCountry { get; set; }
+        public string? businessCountry { get; set; }
 
         [XmlElement(ElementName = "businessPhone")]
-        public string businessPhone { get; set; }
+        public string? businessPhone { get; set; }
 
         [XmlElement(ElementName = "businessFax")]
-        public string businessFax { get; set; }
+        public string? businessFax { get; set; }
 
         [XmlElement(ElementName = "mailingStreet")]
-        public string mailingStreet { get; set; }
+        public string? mailingStreet { get; set; }
 
         [XmlElement(ElementName = "mailingCity")]
-        public string mailingCity { get; set; }
+        public string? mailingCity { get; set; }
 
         [XmlElement(ElementName = "mailingState")]
-        public string mailingState { get; set; }
+        public string? mailingState { get; set; }
 
         [XmlElement(ElementName = "mailingZipCode")]
-        public string mailingZipCode { get; set; }
+        public string? mailingZipCode { get; set; }
 
         [XmlElement(ElementName = "mailingColonia")]
-        public string mailingColonia { get; set; }
+        public string? mailingColonia { get; set; }
 
         [XmlElement(ElementName = "mailingCountry")]
-        public string mailingCountry { get; set; }
+        public string? mailingCountry { get; set; }
 
         [XmlElement(ElementName = "mailingPhone")]
-        public string mailingPhone { get; set; }
+        public string? mailingPhone { get; set; }
 
         [XmlElement(ElementName = "mailingFax")]
-        public string mailingFax { get; set; }
+        public string? mailingFax { get; set; }
 
         [XmlElement(ElementName = "undeliverableMail")]
-        public string undeliverableMail { get; set; }
+        public string? undeliverableMail { get; set; }
 
         [XmlElement(ElementName = "companyRep1")]
-        public string companyRep1 { get; set; }
+        public string? companyRep1 { get; set; }
 
         [XmlElement(ElementName = "companyRep2")]
-        public string companyRep2 { get; set; }
+        public string? companyRep2 { get; set; }
 
         [XmlElement(ElementName = "cellPhone")]
-        public string cellPhone { get; set; }
+        public string? cellPhone { get; set; }
 
         [XmlElement(ElementName = "emailAddress")]
         public string emailAddress { get; set; }
 
         [XmlElement(ElementName = "dunBradstreetNum")]
-        public string dunBradstreetNum { get; set; }
+        public string? dunBradstreetNum { get; set; }
 
         [XmlElement(ElementName = "organization")]
-        public string organization { get; set; }
+        public string? organization { get; set; }
 
     }
 
@@ -256,7 +256,7 @@ namespace SaferWatchWebApp.Models
 
 
         [XmlElement(ElementName = "PolicyList")]
-        public PolicyList PolicyList { get; set; }
+        public PolicyList? PolicyList { get; set; }
     }
 
     public class PolicyList
@@ -322,43 +322,43 @@ namespace SaferWatchWebApp.Models
     public class CertData
     {
         [XmlAttribute("status")]
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
         [XmlElement("Certificate")]
-        public Certificate Certificate { get; set; }
+        public Certificate? Certificate { get; set; }
     }
 
     public class Certificate
     {
         [XmlElement("certificateID")]
-        public string CertificateID { get; set; }
+        public string? CertificateID { get; set; }
 
         [XmlElement("producerName")]
-        public string ProducerName { get; set; }
+        public string? ProducerName { get; set; }
 
         [XmlElement("producerAddress")]
-        public string ProducerAddress { get; set; }
+        public string? ProducerAddress { get; set; }
 
         [XmlElement("producerCity")]
-        public string ProducerCity { get; set; }
+        public string? ProducerCity { get; set; }
 
         [XmlElement("producerState")]
-        public string ProducerState { get; set; }
+        public string? ProducerState { get; set; }
 
         [XmlElement("producerZip")]
-        public string ProducerZip { get; set; }
+        public string? ProducerZip { get; set; }
 
         [XmlElement("producerPhone")]
-        public string ProducerPhone { get; set; }
+        public string? ProducerPhone { get; set; }
 
         [XmlElement("producerFax")]
-        public string ProducerFax { get; set; }
+        public string? ProducerFax { get; set; }
 
         [XmlElement("producerEmail")]
-        public string ProducerEmail { get; set; }
+        public string? ProducerEmail { get; set; }
 
         [XmlElement("paidFor")]
-        public string PaidFor { get; set; }
+        public string? PaidFor { get; set; }
 
         [XmlElement("Coverage")]
         public List<Coverage> Coverages { get; set; } // Assuming there can be multiple Coverage entries
@@ -367,28 +367,28 @@ namespace SaferWatchWebApp.Models
     public class Coverage
     {
         [XmlElement("insurerName")]
-        public string InsurerName { get; set; }
+        public string? InsurerName { get; set; }
 
         [XmlElement("type")]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         [XmlElement("policyNumber")]
-        public string PolicyNumber { get; set; }
+        public string? PolicyNumber { get; set; }
 
         [XmlElement("expirationDate")]
-        public string ExpirationDate { get; set; }
+        public string? ExpirationDate { get; set; }
 
         [XmlElement("coverageLimit")]
-        public string CoverageLimit { get; set; }
+        public string? CoverageLimit { get; set; }
 
         [XmlElement("deductable")]
-        public string Deductable { get; set; }
+        public string? Deductable { get; set; }
 
         [XmlElement("referBreakdown")]
-        public string ReferBreakdown { get; set; }
+        public string? ReferBreakdown { get; set; }
 
         [XmlElement("referBreakDeduct")]
-        public string ReferBreakDeduct { get; set; }
+        public string? ReferBreakDeduct { get; set; }
     }
 
     public class Safety
