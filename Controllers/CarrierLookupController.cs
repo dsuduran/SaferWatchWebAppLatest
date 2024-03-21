@@ -37,7 +37,7 @@ using System.Xml.Serialization;
 
         //}
 
-        [HttpGet("{number}")]
+        [HttpGet]
         public async Task<IActionResult> CarrierLookupAsync(string number)
         {
             System.Diagnostics.Debugger.Launch();

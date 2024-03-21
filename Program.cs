@@ -2,10 +2,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews() // Support for MVC
     .AddXmlSerializerFormatters();
-builder.Services.AddRazorPages(); // Support for Razor Pages
+builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient<SaferWatchService>();
+
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -21,6 +22,7 @@ app.UseStaticFiles(); // Necessary for serving static files (e.g., CSS, JS, imag
 app.UseRouting();
 app.UseAuthorization();
 app.MapControllerRoute(
+    
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();

@@ -27,12 +27,12 @@ namespace SaferWatchWebApp.Models
         public IActionResult Index(string MCNumber)
         {
             //api call to get the data.
-            CarrierLookup lookupData = GetData(MCNumber).Result;
+            CarrierLookup lookupData = (CarrierLookup)GetData(MCNumber).Result;
             return View(lookupData);
         }
 
 
-        public async Task<CarrierLookup> GetData(string number)
+        public async Task<IActionResult> GetData(string number)
         {
             //api call goes here
             string baseUrl = "https://www.saferwatch.com/webservices/CarrierService32.php";
@@ -418,8 +418,10 @@ namespace SaferWatchWebApp.Models
 
                 result = new CarrierLookup();
             }
-            return result;
+
+			return Json(result);
         }
+
 
     }
 
