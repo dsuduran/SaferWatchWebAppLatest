@@ -10,10 +10,12 @@
 </h1>
 
 <button id="fetchDataButton">Fetch Data</button>
+<label id="lblLegalName">Company Name:</label>
+<input type="text" id="legalNameTextbox" name="legalName" />
 
 
-<input type="text" id="MCNumber" name="docketNumber" />
-<br />
+ <input type="text" id="MCNumber" name="docketNumber" />
+@* <br />
 <input type="text" id="CargoInsuranceEffectiveDate" name="effectiveDate" />
 <br/>
 <input type="text" id="CargoInsuranceExpirationDate" name="expirationDate" />
@@ -29,7 +31,7 @@
 <input type="text" id="AutoLiabilityInsuranceCompany" name="insurerName" />
 <br />
 <input type="text" id="AutoLiabilityPolicyNumber" name="policyNumber" />
-
+  *@
 
 <script>
     $(document).ready(function () {
@@ -54,7 +56,10 @@
                         console.error("Carrier details not found in response.");
                         return;
                     }
-
+                    var legalName = carrierDetails.identity.legalName;
+                    if (legalName) {
+                        $("#legalNameTextbox").val(legalName);
+                    }
                     // Processing for Cargo Insurance
                     var fmcsaInsurance = carrierDetails.FMCSAInsurance;
                     if (fmcsaInsurance && fmcsaInsurance.PolicyList && fmcsaInsurance.PolicyList.PolicyItem && fmcsaInsurance.PolicyList.PolicyItem.length > 0) {
