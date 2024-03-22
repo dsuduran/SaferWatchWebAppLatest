@@ -12,8 +12,7 @@
 <button id="fetchDataButton">Fetch Data</button>
 <label id="lblLegalName">Company Name:</label>
 <input type="text" id="legalNameTextbox" name="legalName" />
-
-
+ <label id="lblLegalName">MC Number:</label> 
  <input type="text" id="MCNumber" name="docketNumber" />
 @* <br />
 <input type="text" id="CargoInsuranceEffectiveDate" name="effectiveDate" />
@@ -58,7 +57,7 @@
                     }
                     var legalName = carrierDetails.identity.legalName;
                     if (legalName) {
-                        $("#legalNameTextbox").val(legalName);
+                        $("#legalNameTextbox").val(legalName); // Setting the value of the textbox
                     }
                     // Processing for Cargo Insurance
                     var fmcsaInsurance = carrierDetails.FMCSAInsurance;
