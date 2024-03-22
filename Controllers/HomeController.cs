@@ -390,6 +390,7 @@ namespace SaferWatchWebApp.Models
                     {
                         result = (CarrierLookup)serializer.Deserialize(reader);
 
+						
                         //var policyList = result.CarrierDetails.FMCSAInsurance.PolicyList;
                         //Console.WriteLine("Policy Items:");
                         //foreach (var policyItem in policyList.PolicyItems)
