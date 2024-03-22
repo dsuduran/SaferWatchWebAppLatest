@@ -47,27 +47,37 @@
                 contentType: 'application/json',
                 data: JSON.stringify(mcNumber),
                 success: function (response) {
-
                     console.log('The data received back is ', response);
-                    debugger;
 
-                    // var cargoInsurance = response.CarrierDetails.fmcsaInsurance.policyList.policyItems.find(item => item.insuranceType === "Cargo");
-                    // if (cargoInsurance) {
-                    //     $("#CargoInsuranceEffectiveDate").val(cargoInsurance.effectiveDate);
-                    //     $("#CargoInsuranceExpirationDate").val(cargoInsurance.cancelationDate);
-                    //     $("#CargoInsuraceCompany").val(cargoInsurance.companyName);
-                    //     $("#CargoInsurancePolicyNumber").val(cargoInsurance.policyNumber);
-                    // }
+                    var carrierDetails = response.carrierDetails;
+                    if (!carrierDetails) {
+                        console.error("Carrier details not found in response.");
+                        return;
+                    }
 
+                    // Processing for Cargo Insurance
+                    var fmcsaInsurance = carrierDetails.FMCSAInsurance;
+                    if (fmcsaInsurance && fmcsaInsurance.PolicyList && fmcsaInsurance.PolicyList.PolicyItem && fmcsaInsurance.PolicyList.PolicyItem.length > 0) {
+                        var cargoInsurance = fmcsaInsurance.PolicyList.PolicyItem.find(item => item.insuranceType === "Cargo");
+                        if (cargoInsurance) {
+                            $("#CargoInsuranceEffectiveDate").val(cargoInsurance.effectiveDate);
+                            $("#CargoInsuranceExpirationDate").val(cargoInsurance.cancelationDate);
+                            $("#CargoInsuraceCompany").val(cargoInsurance.companyName);
+                            $("#CargoInsurancePolicyNumber").val(cargoInsurance.policyNumber);
+                        }
+                    }
 
-                    // var autoLiability = response.CarrierDetails.CertData.Certificate.Coverages.find(coverage => coverage.type === "Auto");
-                    // if (autoLiability) {
-                    //     $("#AutoLiabilityEffectiveDate").val(autoLiability.effectiveDate);
-                    //     $("#AutoLiabilityExpirationDate").val(autoLiability.expirationDate);
-                    //     $("#AutoLiabilityInsuranceCompany").val(autoLiability.insurerName);
-                    //     $("#AutoLiabilityPolicyNumber").val(autoLiability.policyNumber);
-                    // }
-
+                    // Processing for Auto Liability
+                    var certData = carrierDetails.CertData;
+                    if (certData && certData.Certificate && certData.Certificate.Coverage) {
+                        var autoLiability = certData.Certificate.Coverage.find(coverage => coverage.type === "Auto");
+                        if (autoLiability) {
+                            $("#AutoLiabilityEffectiveDate").val(autoLiability.effectiveDate);
+                            $("#AutoLiabilityExpirationDate").val(autoLiability.expirationDate);
+                            $("#AutoLiabilityInsuranceCompany").val(autoLiability.insurerName);
+                            $("#AutoLiabilityPolicyNumber").val(autoLiability.policyNumber);
+                        }
+                    }
                 },
                 error: function (xhr, status, error) {
                     console.error("Error fetching data: ", status, error);
@@ -76,5 +86,6 @@
         });
     });
 </script>
+
 
 
